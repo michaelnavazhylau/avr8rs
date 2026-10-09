@@ -26,7 +26,7 @@ revision exists. We do not label the downloaded PDF as the latest revision.
 
 ## Reproduce and verify
 
-From `rust_port/`:
+From the repository root:
 
 ```sh
 python3 tools/specs.py fetch --extract     # fetch missing PDFs; validate pinned hashes
@@ -73,7 +73,7 @@ software license does **not** relicense them.
 | Primary-device instruction cycle summary | ATmega328P §37 | 625–627 |
 
 The AVR8js assembler grammar, directives, labels, diagnostics, and returned metadata
-are **software contracts**. Use `../../avr8js/src/utils/assembler.ts` and its tests
+are **software contracts**. Use `../avr8js/src/utils/assembler.ts` and its tests
 for those; a hardware manual or GNU assembler cannot replace this specification.
 
 ### ATmega328P peripherals

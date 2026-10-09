@@ -1,0 +1,29 @@
+name: avr8rs engine
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  engine:
+    # Pinned rather than ubuntu-latest, which migrates to Ubuntu 26 in Oct 2026.
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      # The pinned avr8js submodule is read-only reference material. The gate
+      # neither builds nor executes it, so it is deliberately not fetched.
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      # Pinned rather than @stable: a new stable release can promote clippy lints
+      # to errors and break the gate. Bump deliberately, together with any lint
+      # fixes the newer toolchain requires.
+      - uses: dtolnay/rust-toolchain@1.99.0
+        with:
+          components: rustfmt, clippy
+      - name: Verify the engine and its regressions in debug and release
+        run: bash tools/verify-native.sh

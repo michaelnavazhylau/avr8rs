@@ -11,12 +11,12 @@ parity, production adapter/core separation or hardware fidelity.
 
 ## Sources of truth
 
-1. **Compatibility behavior:** pinned upstream `../../avr8js/src/` production
+1. **Compatibility behavior:** pinned upstream `../avr8js/src/` production
    source plus the converted Rust scenarios. Upstream revision:
    `bee6f0a94e0e27786f6bc21aee3c775849fb50fd`. The scenarios themselves and their
    test input hashes (`conversion-manifest.json`) live in the separate
    `avr8js-parity` repository, which pins the same revision as a live submodule;
-   this repository keeps `avr8js/` uninitialized, for provenance only.
+   this repository pins it read-only, for provenance only.
 2. **Hardware behavior:** the four pinned Microchip documents in
    [sources.json](sources.json), with section/page navigation in [README.md](README.md).
 3. **Adapter behavior:** `../src/runtime.rs` (`Backend`, `Value`, synchronous
@@ -30,7 +30,7 @@ an explicit design decision and a separate test set; no such mode exists yet.
 
 ## Upstream implementation files to port
 
-All paths below are relative to `../../avr8js/src/`.
+All paths below are relative to `../avr8js/src/`.
 
 | Native responsibility | Software specification | Rust test module |
 | --- | --- | --- |

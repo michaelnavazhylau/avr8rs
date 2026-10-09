@@ -31,7 +31,6 @@ Git-ignored reference files; the provenance and tooling remain versionable.
 ## What runs today
 
 ```sh
-cd rust_port
 cargo test --offline
 cargo fmt --check
 cargo clippy --all-targets --offline -- -D warnings
@@ -192,10 +191,10 @@ expectations are preserved, including source typos and unusual assembler inputs.
 ## Upstream reference and regeneration
 
 Baseline upstream revision: `bee6f0a94e0e27786f6bc21aee3c775849fb50fd`. This
-repository pins it as an uninitialized `avr8js/` submodule for provenance: it
-records which upstream revision the port's compatibility claims are written
-against, and `specs/backend-plan.md` cites its sources by path. Nothing here
-builds or executes it.
+repository pins it as the `avr8js/` submodule: it records which upstream
+revision the port's compatibility claims are written against, and
+`specs/backend-plan.md` cites its sources by path. Nothing here builds or
+executes it — the submodule is read-only reference material.
 
 Regeneration is owned by
 [`avr8js-parity`](https://github.com/michaelnavazhylau/avr8js-parity), which
