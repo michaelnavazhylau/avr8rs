@@ -1,0 +1,56 @@
+cff-version: 1.2.0
+message: "If you use this software in your work, please cite it using the metadata below."
+title: "avr8rs: a dependency-free native Rust AVR8 simulator core"
+version: "0.1.1"
+date-released: "2026-10-09"
+abstract: >-
+  A native Rust implementation of an AVR8 (ATmega328P-class) microcontroller
+  simulator: assembler, CPU and instruction decode, interrupts, clock, GPIO,
+  megaAVR timers, ATtiny Timer1, EEPROM, ADC, SPI, USART, TWI master states and
+  watchdog. It has no Cargo dependencies, embeds no JavaScript runtime, and is
+  validated against the converted AVR8js behavioral test suite and against
+  firmware compiled by arduino-cli for Arduino UNO boards.
+type: software
+authors:
+  - family-names: Navazhylau
+    given-names: Michael
+license: MIT
+repository-code: "https://github.com/michaelnavazhylau/avr8rs"
+url: "https://github.com/michaelnavazhylau/avr8rs"
+identifiers:
+  - type: url
+    value: "https://crates.io/crates/avr8rs/0.1.1"
+    description: "The published crate for this version on crates.io"
+  - type: url
+    value: "https://docs.rs/avr8rs/0.1.1"
+    description: "Rendered API documentation for this version"
+keywords:
+  - AVR
+  - ATmega328P
+  - AVR8js
+  - simulator
+  - emulator
+  - Rust
+  - embedded
+references:
+  - type: software
+    title: "AVR8js: AVR 8-bit microcontroller simulator in TypeScript"
+    authors:
+      - family-names: Shaked
+        given-names: Uri
+    repository-code: "https://github.com/wokwi/avr8js"
+    license: MIT
+    notes: >-
+      Upstream reference for this compatibility port. The simulator core and the
+      scenario runner are derived from it, pinned at revision
+      bee6f0a94e0e27786f6bc21aee3c775849fb50fd.
+  - type: software
+    title: "avr8js-parity: the converted AVR8js behavioral contract for avr8rs"
+    authors:
+      - family-names: Navazhylau
+        given-names: Michael
+    repository-code: "https://github.com/michaelnavazhylau/avr8js-parity"
+    license: MIT
+    notes: >-
+      The 347-case converted contract this engine is validated against, with the
+      converter and the pinned upstream revision it is generated from.

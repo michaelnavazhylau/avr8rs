@@ -188,6 +188,24 @@ counts can differ. Each case gets fresh setup and inherited `beforeEach` hooks.
 Assembly templates, config overrides, issue-regression names, and numeric/floating
 expectations are preserved, including source typos and unusual assembler inputs.
 
+## Citation
+
+[`CITATION.cff`](CITATION.cff) carries the citation metadata, so GitHub's "Cite
+this repository" button exports this software as APA or BibTeX. Citing the
+current release:
+
+> Navazhylau, M. (2026). *avr8rs: a dependency-free native Rust AVR8 simulator
+> core* (Version 0.1.1) [Computer software].
+> <https://github.com/michaelnavazhylau/avr8rs>
+
+For a specific version, use the crate or its rendered documentation, both of
+which are recorded as identifiers in the file:
+[crates.io/crates/avr8rs](https://crates.io/crates/avr8rs) and
+[docs.rs/avr8rs](https://docs.rs/avr8rs).
+
+The gate checks that `version` in `CITATION.cff` matches the crate version, so a
+release cannot leave a stale citation behind.
+
 ## Upstream reference and regeneration
 
 Baseline upstream revision: `bee6f0a94e0e27786f6bc21aee3c775849fb50fd`. This
